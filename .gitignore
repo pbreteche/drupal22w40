@@ -9,6 +9,10 @@
 /web/sites/*/*settings*.php
 /web/sites/*/*services*.yml
 
+# Ignore contrib projects
+/web/modules/contrib
+/web/themes/contrib
+
 # Ignore paths that may contain user-generated content
 /web/sites/*/files
 /web/sites/*/public
