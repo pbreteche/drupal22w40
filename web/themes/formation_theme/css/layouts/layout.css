@@ -1,0 +1,35 @@
+.layout-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.layout-sidebar {
+  background-color: #fed;
+}
+
+.main-layout {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.layout-content, .layout-sidebar {
+  flex-basis: 100%;
+}
+
+@media screen and (min-width: 920px) {
+  .layout-content {
+    flex: 1 0;
+  }
+
+  .layout-sidebar {
+    flex: 0 1 20%;
+  }
+
+  .layout-sidebar-first {
+    order: -1;
+  }
+
+  .layout-sidebar-second {
+    order: 1;
+  }
+}

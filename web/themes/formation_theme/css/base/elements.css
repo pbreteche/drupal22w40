@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+video,
+img,
+object {
+  max-width: 100%;
+}
