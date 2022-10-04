@@ -10,19 +10,12 @@
     attach: function (context, settings) {
       once('nested-menu', '.region-primary-menu > .block-menu > .menu', context).forEach(
         function (element) {
-          const menuItems = element.querySelectorAll('.menu-item--expanded > a');
-          for (const menuItem of menuItems) {
-            menuItem.addEventListener('click', function(event) {
-              event.preventDefault();
-              for (const otherItem of menuItems) {
-                if (otherItem === menuItem) {
-                  continue;
-                }
-                otherItem.nextElementSibling.classList.remove('opened');
-              }
-              menuItem.nextElementSibling.classList.toggle('opened');
-            })
-          }
+          const $menuItems = $(element).find('.menu-item--expanded > a');
+          $menuItems.click(function(event) {
+            event.preventDefault();
+            $menuItems.not(this).next().removeClass('opened');
+            $(this).next().toggleClass('opened');
+          })
         }
       )
     }
