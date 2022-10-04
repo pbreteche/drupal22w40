@@ -1,0 +1,8 @@
+uuid: afe48633-a6f6-4ff0-b05d-62ba1cecb9ec
+langcode: fr
+status: true
+dependencies: {  }
+name: Catégorie
+vid: categorie
+description: 'Sert à classer les articles dans différentes catégories'
+weight: 0

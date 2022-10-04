@@ -1,0 +1,29 @@
+uuid: deb562c0-f72c-41ea-8dec-20585fe93eb7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categorie
+    - node.type.article
+    - taxonomy.vocabulary.categorie
+id: node.article.field_categorie
+field_name: field_categorie
+entity_type: node
+bundle: article
+label: Catégorie
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      categorie: categorie
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
