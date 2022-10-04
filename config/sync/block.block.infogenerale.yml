@@ -1,0 +1,25 @@
+uuid: 56024d0d-aa56-4d63-bab9-bc2edc64fb2d
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4f8fd9f7-1efa-42d6-8c8d-aa7f3ed31f34'
+  module:
+    - block_content
+  theme:
+    - adminimal_theme
+id: infogenerale
+theme: adminimal_theme
+region: help
+weight: 0
+provider: null
+plugin: 'block_content:4f8fd9f7-1efa-42d6-8c8d-aa7f3ed31f34'
+settings:
+  id: 'block_content:4f8fd9f7-1efa-42d6-8c8d-aa7f3ed31f34'
+  label: 'info générale'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

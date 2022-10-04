@@ -1,0 +1,23 @@
+uuid: ff5b7b52-6623-41de-8394-2de494b82a92
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - formation_theme
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: formation_theme_search_form_wide
+theme: formation_theme
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Formulaire de recherche (large)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

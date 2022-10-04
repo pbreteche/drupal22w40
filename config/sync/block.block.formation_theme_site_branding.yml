@@ -1,0 +1,25 @@
+uuid: b21a7659-0d8d-48b3-a674-39f187ac9d66
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - formation_theme
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: formation_theme_site_branding
+theme: formation_theme
+region: header
+weight: -8
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Identité du site'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

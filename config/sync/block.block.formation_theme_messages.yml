@@ -1,0 +1,22 @@
+uuid: cd42a964-d9e6-4f9c-b9a7-d1687675ae41
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - formation_theme
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: formation_theme_messages
+theme: formation_theme
+region: featured
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Messages de statut'
+  label_display: '0'
+  provider: system
+visibility: {  }

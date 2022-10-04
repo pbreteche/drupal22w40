@@ -1,0 +1,22 @@
+uuid: e3b35e14-ef44-4378-b606-2b9b27f1ef1f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - formation_theme
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: formation_theme_breadcrumbs
+theme: formation_theme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Fils d''ariane'
+  label_display: '0'
+  provider: system
+visibility: {  }

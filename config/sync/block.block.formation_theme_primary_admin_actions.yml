@@ -1,0 +1,20 @@
+uuid: 9d0a27d1-efe6-47ec-bfa5-694ad45623d5
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - formation_theme
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: formation_theme_primary_admin_actions
+theme: formation_theme
+region: header
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Actions d''administration principales'
+  label_display: '0'
+  provider: core
+visibility: {  }

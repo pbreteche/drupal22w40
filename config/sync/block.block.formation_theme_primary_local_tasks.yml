@@ -1,0 +1,22 @@
+uuid: 2357f34b-5af2-4492-94b6-45beec8feac1
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - formation_theme
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: formation_theme_primary_local_tasks
+theme: formation_theme
+region: content
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Onglets principaux'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }
