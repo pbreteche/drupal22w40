@@ -1,0 +1,28 @@
+.region-primary-menu > .block-menu {
+}
+.region-primary-menu > .block-menu > .menu {
+  display: flex;
+}
+
+.region-primary-menu a {
+  display: block;
+  padding: .5em;
+  margin: 0 .5em;
+  background-color: #678;
+  color: #fed;
+  text-decoration: none;
+}
+
+.region-primary-menu .menu-item--expanded {
+  position: relative;
+}
+
+.region-primary-menu .menu-item--expanded > a + ul {
+  display: none;
+  position: absolute;
+  z-index: 500;
+}
+
+.region-primary-menu .menu-item--expanded > a + ul.opened {
+  display: block;
+}
