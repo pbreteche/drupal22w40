@@ -6,3 +6,6 @@ formation_2.settings:
     example:
       type: string
       label: 'Example'
+    advanced:
+      type: string
+      label: 'Advanced'

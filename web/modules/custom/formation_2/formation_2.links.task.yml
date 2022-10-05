@@ -1,0 +1,9 @@
+formation_2.basic_form:
+  title: 'Configuration Formation 2'
+  route_name: formation_2.settings_form
+  base_route: formation_2.settings_form
+
+formation_2.advanced_form:
+  title: 'Configuration avancée Formation 2'
+  route_name: formation_2.advanced_settings_form
+  base_route: formation_2.settings_form
