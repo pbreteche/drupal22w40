@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Formation 1 module.
+ */
+
+
+/**
+ * Implements hook_help().
+ */
+function formation_1_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.formation_1':
+      return '<p>Ceci est la page d\'aide du module formation 1</p>';
+  }
+}
