@@ -15,8 +15,8 @@ class Formation1Controller extends ControllerBase {
   public function build() {
 
     $build['content'] = [
-      '#type' => 'item',
-      '#markup' => $this->t('It works!'),
+      '#theme' => 'formation_1_exemple',
+      '#ma_variable' => $this->t('It works!'),
     ];
 
     return $build;
