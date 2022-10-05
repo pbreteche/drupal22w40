@@ -3,6 +3,8 @@
 namespace Drupal\formation_3\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\formation_3\Loader\ContactLoader;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Returns responses for Formation 3 routes.
@@ -10,16 +12,30 @@ use Drupal\Core\Controller\ControllerBase;
 class Formation3Controller extends ControllerBase {
 
   /**
+   * @var \Drupal\formation_3\Loader\ContactLoader
+   */
+  private ContactLoader $loader;
+
+  public function __construct(ContactLoader $loader) {
+    $this->loader = $loader;
+  }
+
+  public static function create(ContainerInterface $container) {
+    return new static($container->get('formation_3.contact_loader'));
+  }
+
+  /**
    * Builds the response.
    */
-  public function build() {
+  public function index() {
+
+    $contacts = $this->loader->loadAll();
 
     $build['content'] = [
-      '#type' => 'item',
-      '#markup' => $this->t('It works!'),
+      '#theme' => 'formation_3_index',
+      '#contacts' => $contacts,
     ];
 
     return $build;
   }
-
 }

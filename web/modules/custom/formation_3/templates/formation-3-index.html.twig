@@ -1,0 +1,18 @@
+
+<table>
+  <thead>
+  <tr>
+    <th>{{ 'First name'|t }}</th><th>{{ 'Last name'|t }}</th><th>{{ 'Email'|t }}</th><th>{{ 'description'|t }}</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for contact in contacts %}
+  <tr>
+    <td>{{ contact.first_name }}</td>
+    <td>{{ contact.last_name }}</td>
+    <td>{{ contact.email }}</td>
+    <td>{{ contact.description }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>

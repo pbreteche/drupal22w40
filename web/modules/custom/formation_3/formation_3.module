@@ -4,3 +4,15 @@
  * @file
  * Primary module hooks for Formation 3 module.
  */
+/**
+ * Implements hook_theme().
+ */
+function formation_3_theme($existing, $type, $theme, $path) {
+  return [
+    'formation_3_index' => [
+      'variables' => [
+        'contacts' => [],
+      ],
+    ],
+  ];
+}

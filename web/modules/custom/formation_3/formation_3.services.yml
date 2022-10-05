@@ -1,0 +1,5 @@
+services:
+  formation_3.contact_loader:
+    class: Drupal\formation_3\Loader\ContactLoader
+    arguments:
+      - '@database'
