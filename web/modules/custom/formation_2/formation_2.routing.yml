@@ -1,0 +1,15 @@
+formation_2.example:
+  path: '/formation-2/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\formation_2\Controller\Formation2Controller::build'
+  requirements:
+    _permission: 'access content'
+
+formation_2.settings_form:
+  path: '/admin/config/system/formation-2'
+  defaults:
+    _title: 'Formation 2 settings'
+    _form: 'Drupal\formation_2\Form\SettingsForm'
+  requirements:
+    _permission: 'administer formation_2 configuration'
