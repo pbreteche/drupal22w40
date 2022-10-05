@@ -1,0 +1,5 @@
+services:
+  formation_2.city_converter:
+    class: Drupal\formation_2\Routing\CityConverter
+    tags:
+      - {name: paramconverter}

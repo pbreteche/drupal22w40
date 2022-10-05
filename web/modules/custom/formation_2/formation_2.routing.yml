@@ -7,6 +7,10 @@ formation_2.example:
   requirements:
     _permission: 'access content'
     city: "[a-zA-Z-]+"
+  options:
+    parameters:
+      city:
+        type: city-type
 
 formation_2.settings_form:
   path: '/admin/config/system/formation-2'
