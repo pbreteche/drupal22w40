@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Settings Theme theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function settings_theme_preprocess_html(&$variables) {
+  $variables['link_color'] = theme_get_setting('link_color');
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function settings_theme_preprocess_page(&$variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function settings_theme_preprocess_node(&$variables) {
+
+}

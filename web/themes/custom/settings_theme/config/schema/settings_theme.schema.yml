@@ -1,0 +1,11 @@
+# Schema for the configuration files of the Settings Theme theme.
+settings_theme.settings:
+  type: theme_settings
+  label: 'Settings Theme settings'
+  mapping:
+    font_size:
+      type: integer
+      label: Font size
+    link_color:
+      type: varchar
+      label: Link color
