@@ -1,0 +1,4 @@
+administer formation_3 configuration:
+  title: 'Administer formation_3 configuration'
+  description: 'Optional description.'
+  restrict access: true
