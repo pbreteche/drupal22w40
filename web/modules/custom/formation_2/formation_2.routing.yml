@@ -1,10 +1,12 @@
 formation_2.example:
-  path: '/formation-2/example'
+  path: '/formation-2/example/{city}'
   defaults:
     _title: 'Example'
     _controller: '\Drupal\formation_2\Controller\Formation2Controller::build'
+    city: Nantes
   requirements:
     _permission: 'access content'
+    city: "[a-zA-Z-]+"
 
 formation_2.settings_form:
   path: '/admin/config/system/formation-2'

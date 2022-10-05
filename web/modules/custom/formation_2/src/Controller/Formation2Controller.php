@@ -12,11 +12,11 @@ class Formation2Controller extends ControllerBase {
   /**
    * Builds the response.
    */
-  public function build() {
+  public function build($city) {
 
     $build['content'] = [
       '#type' => 'item',
-      '#markup' => $this->t('It works!'),
+      '#markup' => $city,
     ];
 
     return $build;
