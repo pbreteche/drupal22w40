@@ -1,0 +1,6 @@
+formation_2.config_action:
+  route_name: formation_2.advanced_settings_form
+  title: Une action
+  appears_on:
+    - formation_2.settings_form
+    - formation_2.advanced_settings_form

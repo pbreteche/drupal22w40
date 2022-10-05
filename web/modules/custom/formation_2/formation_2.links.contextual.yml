@@ -1,0 +1,4 @@
+formation_2.contextual_edit:
+  title: Formation 2 edit
+  route_name: formation_2.example
+  group: block
