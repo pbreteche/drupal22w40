@@ -1,0 +1,4 @@
+formation_1.example:
+  title: Lien vers formation 1
+  route_name: formation_1.example
+  menu_name: main
