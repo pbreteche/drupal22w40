@@ -1,0 +1,5 @@
+formation_3.add_contact:
+  route_name: formation_3.new
+  title: New contact
+  appears_on:
+    - formation_3.example

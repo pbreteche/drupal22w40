@@ -19,3 +19,10 @@ formation_3.show:
       contact:
         type: contact-type
 
+formation_3.new:
+  path: '/formation-3/new'
+  defaults:
+    _title: 'New contact'
+    _form: 'Drupal\formation_3\Form\ContactForm'
+  requirements:
+    _permission: 'create contact'

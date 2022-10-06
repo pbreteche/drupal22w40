@@ -2,3 +2,7 @@ administer formation_3 configuration:
   title: 'Administer formation_3 configuration'
   description: 'Optional description.'
   restrict access: true
+
+create contact:
+  title: Create new contact
+  description: New contact will be added to contact book
