@@ -2,7 +2,7 @@
 <table>
   <thead>
   <tr>
-    <th>{{ 'First name'|t }}</th><th>{{ 'Last name'|t }}</th><th>{{ 'Email'|t }}</th><th>{{ 'description'|t }}</th>
+    <th>{{ 'First name'|t }}</th><th>{{ 'Last name'|t }}</th><th>{{ 'Email'|t }}</th><th>{{ 'show'|t }}</th>
   </tr>
   </thead>
   <tbody>
@@ -11,7 +11,7 @@
     <td>{{ contact.first_name }}</td>
     <td>{{ contact.last_name }}</td>
     <td>{{ contact.email }}</td>
-    <td>{{ contact.description }}</td>
+    <td><a href="{{ path('formation_3.show', {contact: contact.id}) }}">{{ 'Show'|t }}</a></td>
   </tr>
   {% endfor %}
   </tbody>

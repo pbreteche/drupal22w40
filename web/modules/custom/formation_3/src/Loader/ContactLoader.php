@@ -13,11 +13,21 @@ class ContactLoader {
     $this->connection = $database;
   }
 
-  public function loadAll() {
-    $query = $this->connection->select('formation_3_contact')
-      ->fields('formation_3_contact', ['id', 'uid', 'first_name', 'last_name', 'email', 'description', 'phone'])
-    ;
+  public function load(int $id) {
+    $query = $this->connection->query(
+      'SELECT id, uid, first_name, last_name, email, description, phone'.
+      ' FROM {formation_3_contact}'.
+      ' WHERE id = :id', [':id' => $id]
+    );
 
-    return $query->execute()->fetchAll();
+    return $query->fetchObject();
+  }
+
+  public function loadAll() {
+    $query = $this->connection->query(
+      'SELECT id, uid, first_name, last_name, email, description, phone FROM {formation_3_contact}'
+    );
+
+    return $query->fetchAll();
   }
 }

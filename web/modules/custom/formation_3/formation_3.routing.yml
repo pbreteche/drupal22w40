@@ -6,3 +6,16 @@ formation_3.example:
   requirements:
     _permission: 'access content'
 
+formation_3.show:
+  path: '/formation-3/{contact}'
+  defaults:
+    _title_callback: '\Drupal\formation_3\Controller\Formation3Controller::showTitle'
+    _controller: '\Drupal\formation_3\Controller\Formation3Controller::show'
+  requirements:
+    _permission: 'access content'
+    contact: '\d+'
+  options:
+    parameters:
+      contact:
+        type: contact-type
+

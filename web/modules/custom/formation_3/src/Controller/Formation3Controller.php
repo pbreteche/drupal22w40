@@ -38,4 +38,17 @@ class Formation3Controller extends ControllerBase {
 
     return $build;
   }
+
+  public function show($contact) {
+    $build['content'] = [
+      '#theme' => 'formation_3_show',
+      '#contact' => $contact,
+    ];
+
+    return $build;
+  }
+
+  public function showTitle($contact) {
+    return $contact->first_name.' '.strtoupper($contact->last_name);
+  }
 }

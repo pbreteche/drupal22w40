@@ -3,3 +3,10 @@ services:
     class: Drupal\formation_3\Loader\ContactLoader
     arguments:
       - '@database'
+
+  formation_3.contact_converter:
+    class: Drupal\formation_3\Routing\ContactConverter
+    tags:
+      - {name: paramconverter}
+    arguments:
+      - '@formation_3.contact_loader'

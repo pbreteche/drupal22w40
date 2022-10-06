@@ -14,5 +14,10 @@ function formation_3_theme($existing, $type, $theme, $path) {
         'contacts' => [],
       ],
     ],
+    'formation_3_show' => [
+      'variables' => [
+        'contact' => NULL,
+      ],
+    ],
   ];
 }
