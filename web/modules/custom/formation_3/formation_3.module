@@ -19,5 +19,10 @@ function formation_3_theme($existing, $type, $theme, $path) {
         'contact' => NULL,
       ],
     ],
+    'formation_3_count_block' => [
+      'variables' => [
+        'contacts' => [],
+      ],
+    ],
   ];
 }

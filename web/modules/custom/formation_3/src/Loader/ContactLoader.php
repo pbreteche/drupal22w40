@@ -23,11 +23,15 @@ class ContactLoader {
     return $query->fetchObject();
   }
 
-  public function loadAll() {
-    $query = $this->connection->query(
-      'SELECT id, uid, first_name, last_name, email, description, phone FROM {formation_3_contact}'
-    );
+  public function loadAll(?int $max = null) {
+    $query = $this->connection
+      ->select('formation_3_contact')
+      ->fields('formation_3_contact', ['id', 'uid', 'first_name', 'last_name', 'email', 'description', 'phone'])
+    ;
+    if ($max) {
+      $query->range(0, $max);
+    }
 
-    return $query->fetchAll();
+    return $query->execute()->fetchAll();
   }
 }

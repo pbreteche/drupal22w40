@@ -1,0 +1,7 @@
+block.settings.formation_3_contact_count:
+  type: block_settings
+  label: 'Contact count block'
+  mapping:
+    count:
+      type: int
+      label: Count

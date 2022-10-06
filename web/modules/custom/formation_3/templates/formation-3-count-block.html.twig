@@ -1,0 +1,12 @@
+
+<ul>
+  {% for contact in contacts %}
+  <li>
+    <a href="{{ path('formation_3.show', {contact: contact.id}) }}">
+    {{ loop.index }} {{ contact.first_name }} {{ contact.last_name|upper }}
+    </a>
+  </li>
+    {% else %}
+    <li>{{ 'No contact'|t }}</li>
+  {% endfor %}
+</ul>
