@@ -18,5 +18,5 @@ entity.message.delete_form:
 entity.message.collection:
   title: 'Messages'
   route_name: entity.message.collection
-  base_route: system.admin_content
+  base_route: entity.user.collection
   weight: 10

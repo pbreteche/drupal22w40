@@ -43,8 +43,8 @@ use Drupal\user\EntityOwnerTrait;
  *     "owner" = "uid",
  *   },
  *   links = {
- *     "collection" = "/admin/content/message",
- *     "add-form" = "/message/add",
+ *     "collection" = "/admin/people/message",
+ *     "add-form" = "/user/message/add",
  *     "canonical" = "/message/{message}",
  *     "edit-form" = "/message/{message}/edit",
  *     "delete-form" = "/message/{message}/delete",

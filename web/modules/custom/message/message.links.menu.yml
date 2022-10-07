@@ -7,4 +7,4 @@ entity.message.collection:
   title: 'Messages'
   description: 'List of messages.'
   route_name: entity.message.collection
-  parent: system.admin_content
+  parent: entity.user.collection
