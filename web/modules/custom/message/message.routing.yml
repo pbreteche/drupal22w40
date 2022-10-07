@@ -5,3 +5,11 @@ entity.message.settings:
     _title: 'Message'
   requirements:
     _permission: 'administer message'
+
+message.sentbox:
+  path: '/user/sentbox'
+  defaults:
+    _title: 'Sentbox'
+    _controller: '\Drupal\message\Controller\MessageController::build'
+  requirements:
+    _permission: 'send messages'

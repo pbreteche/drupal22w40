@@ -17,6 +17,11 @@ function message_theme() {
     'message' => [
       'render element' => 'elements',
     ],
+    'message-box' => [
+      'variables' => [
+        'messages' => [],
+      ],
+    ],
   ];
 }
 

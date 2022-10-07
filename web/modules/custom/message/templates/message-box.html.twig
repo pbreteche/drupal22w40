@@ -1,0 +1,12 @@
+<div>
+  {% for message in messages %}
+  <article>
+    <h4>{{ message.subject.value }}</h4>
+    <div>
+      {%- for recipient in message.recipients %}
+        {{ recipient.entity.label }}
+      {% endfor -%}
+    </div>
+  </article>
+  {% endfor %}
+</div>
