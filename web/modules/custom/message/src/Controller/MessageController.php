@@ -28,6 +28,34 @@ class MessageController extends ControllerBase {
     $build['content'] = [
       '#theme' => 'message-box',
       '#messages' => $messages,
+      '#cache' => [
+        'tags' => ['message_list']
+      ],
+    ];
+
+    return $build;
+  }
+  /**
+   * Builds the response.
+   */
+  public function inbox() {
+    $messageStorage = $this->entityTypeManager()->getStorage('message');
+
+    $messageIds = $messageStorage
+      ->getQuery()
+      ->accessCheck()
+      ->condition('recipients', \Drupal::currentUser()->id(), 'IN')
+      ->execute()
+    ;
+
+    $messages = $messageStorage->loadMultiple($messageIds);
+
+    $build['content'] = [
+      '#theme' => 'message-box',
+      '#messages' => $messages,
+      '#cache' => [
+        'tags' => ['message_list']
+      ],
     ];
 
     return $build;

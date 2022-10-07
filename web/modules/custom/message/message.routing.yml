@@ -13,3 +13,11 @@ message.sentbox:
     _controller: '\Drupal\message\Controller\MessageController::build'
   requirements:
     _permission: 'send messages'
+
+message.inbox:
+  path: '/user/inbox'
+  defaults:
+    _title: 'Inbox'
+    _controller: '\Drupal\message\Controller\MessageController::inbox'
+  requirements:
+    _permission: 'access content'
