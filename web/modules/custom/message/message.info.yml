@@ -1,0 +1,5 @@
+name: Message
+type: module
+description: Provide  user to user messaging system
+package: Custom
+core_version_requirement: ^9 || ^10

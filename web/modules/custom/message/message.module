@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Message module.
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\message\Entity\Message;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function message_theme() {
+  return [
+    'message' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for message templates.
+ *
+ * Default template: message.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the message information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_message(array &$variables) {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Implements hook_user_cancel().
+ */
+function message_user_cancel($edit, UserInterface $account, $method) {
+  switch ($method) {
+    case 'user_cancel_block_unpublish':
+      // Unpublish messages.
+      $storage = \Drupal::entityTypeManager()->getStorage('message');
+      $message_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->condition('status', 1)
+        ->execute();
+      foreach ($storage->loadMultiple($message_ids) as $message) {
+        $message->set('status', FALSE);
+        $message->save();
+      }
+      break;
+
+    case 'user_cancel_reassign':
+      // Anonymize messages.
+      $storage = \Drupal::entityTypeManager()->getStorage('message');
+      $message_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->execute();
+      foreach ($storage->loadMultiple($message_ids) as $message) {
+        $message->setOwnerId(0);
+        $message->save();
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete() for user entities.
+ */
+function message_user_predelete(UserInterface $account) {
+  // Delete messages.
+  $storage = \Drupal::entityTypeManager()->getStorage('message');
+  $message_ids = $storage->getQuery()
+    ->condition('uid', $account->id())
+    ->execute();
+  $messages = $storage->loadMultiple($message_ids);
+  $storage->delete($messages);
+}

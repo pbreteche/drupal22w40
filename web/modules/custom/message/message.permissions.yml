@@ -1,0 +1,6 @@
+administer message:
+  title: 'Administer message settings'
+  restrict access: true
+
+send messages:
+  title: 'Send messages to other users'

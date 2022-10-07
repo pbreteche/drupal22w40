@@ -1,0 +1,7 @@
+entity.message.settings:
+  path: 'admin/structure/message'
+  defaults:
+    _form: '\Drupal\message\Form\MessageSettingsForm'
+    _title: 'Message'
+  requirements:
+    _permission: 'administer message'

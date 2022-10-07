@@ -1,0 +1,10 @@
+entity.message.settings:
+  title: 'Message'
+  description: 'Configure a Message entity type.'
+  route_name:  entity.message.settings
+  parent: system.admin_structure
+entity.message.collection:
+  title: 'Messages'
+  description: 'List of messages.'
+  route_name: entity.message.collection
+  parent: system.admin_content
