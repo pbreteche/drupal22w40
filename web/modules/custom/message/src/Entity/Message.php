@@ -39,7 +39,7 @@ use Drupal\user\EntityOwnerTrait;
  *   admin_permission = "administer message",
  *   entity_keys = {
  *     "id" = "id",
- *     "label" = "label",
+ *     "subject" = "subject",
  *     "uuid" = "uuid",
  *     "owner" = "uid",
  *   },
@@ -65,6 +65,12 @@ class Message extends ContentEntityBase implements MessageInterface {
     if (!$this->getOwnerId()) {
       // If no owner has been set explicitly, make the anonymous user the owner.
       $this->setOwnerId(0);
+    }
+  }
+
+  public function label() {
+    if ($this->getEntityType()->getKey('subject')) {
+      return $this->getEntityKey('subject');
     }
   }
 

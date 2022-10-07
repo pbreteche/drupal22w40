@@ -68,8 +68,8 @@ class MessageListBuilder extends EntityListBuilder {
    */
   public function buildHeader() {
     $header['id'] = $this->t('ID');
-    $header['label'] = $this->t('Label');
-    $header['status'] = $this->t('Status');
+    $header['subject'] = $this->t('Subject');
+    $header['sent'] = $this->t('Sent');
     $header['uid'] = $this->t('Author');
     $header['created'] = $this->t('Created');
     return $header + parent::buildHeader();
@@ -81,8 +81,8 @@ class MessageListBuilder extends EntityListBuilder {
   public function buildRow(EntityInterface $entity) {
     /** @var \Drupal\message\MessageInterface $entity */
     $row['id'] = $entity->id();
-    $row['label'] = $entity->toLink();
-    $row['status'] = $entity->get('status')->value ? $this->t('Enabled') : $this->t('Disabled');
+    $row['subject'] = $entity->toLink();
+    $row['sent'] = $entity->get('sent')->value ? $this->t('Sent') : $this->t('Draft');
     $row['uid']['data'] = [
       '#theme' => 'username',
       '#account' => $entity->getOwner(),
