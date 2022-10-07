@@ -21,3 +21,18 @@ message.inbox:
     _controller: '\Drupal\message\Controller\MessageController::inbox'
   requirements:
     _permission: 'access content'
+
+message.send:
+  path: /message/{message}/send
+  defaults:
+    _title: 'Envoi'
+    _controller: '\Drupal\message\Controller\MessageController::send'
+  requirements:
+    _permission: 'send messages'
+    _custom_access: '\Drupal\message\Controller\MessageController::isOwner'
+    message: \d+
+  methods: [POST]
+  options:
+    parameters:
+      message:
+        type: entity:message

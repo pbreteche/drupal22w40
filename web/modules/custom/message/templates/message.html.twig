@@ -18,6 +18,13 @@
     {{ title_prefix }}
     {{ title_suffix }}
   {% endif %}
+
+  {% if not elements['#message'].sent.value and elements['#message'].uid.entity.id == user.id %}
+  <form action="{{ path('message.send', {message: elements['#message'].id.value}) }}" method="post">
+    <button>{{ 'Envoyer'|t }}</button>
+  </form>
+  {% endif %}
+
   {% if content %}
     {{- content -}}
   {% endif %}

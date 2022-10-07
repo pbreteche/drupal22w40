@@ -3,6 +3,7 @@
 namespace Drupal\message\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\message\MessageInterface;
 
 /**
  * Returns responses for Message routes.
@@ -45,6 +46,7 @@ class MessageController extends ControllerBase {
       ->getQuery()
       ->accessCheck()
       ->condition('recipients', \Drupal::currentUser()->id(), 'IN')
+      ->condition('sent', TRUE)
       ->execute()
     ;
 
@@ -61,4 +63,14 @@ class MessageController extends ControllerBase {
     return $build;
   }
 
+  public function isOwner(MessageInterface $message) {
+    return $message->get('uid') == \Drupal::currentUser()->id();
+  }
+
+  public function send(MessageInterface $message) {
+    $message->set('sent', TRUE);
+    $this->entityTypeManager()->getStorage('message')->save($message);
+
+    return $this->redirect('entity.message.canonical', ['message' => $message->id()]);
+  }
 }
