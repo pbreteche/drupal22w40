@@ -6,3 +6,7 @@ administer formation_3 configuration:
 create contact:
   title: Create new contact
   description: New contact will be added to contact book
+
+delete contact:
+  title: Delete contact
+  description: New contact will be added to contact book

@@ -26,3 +26,16 @@ formation_3.new:
     _form: 'Drupal\formation_3\Form\ContactForm'
   requirements:
     _permission: 'create contact'
+
+formation_3.contact_delete_confirm:
+  path: '/formation-3/{contact}/contact-delete-confirm'
+  defaults:
+    _title: 'Contact delete confirm'
+    _form: 'Drupal\formation_3\Form\ContactDeleteConfirmForm'
+  requirements:
+    _permission: 'delete contact'
+    contact: '\d+'
+  options:
+    parameters:
+      contact:
+        type: contact-type

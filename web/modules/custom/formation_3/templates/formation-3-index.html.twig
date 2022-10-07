@@ -2,7 +2,7 @@
 <table>
   <thead>
   <tr>
-    <th>{{ 'First name'|t }}</th><th>{{ 'Last name'|t }}</th><th>{{ 'Email'|t }}</th><th>{{ 'show'|t }}</th>
+    <th>{{ 'First name'|t }}</th><th>{{ 'Last name'|t }}</th><th>{{ 'Email'|t }}</th><th>{{ 'Actions'|t }}</th>
   </tr>
   </thead>
   <tbody>
@@ -11,7 +11,12 @@
     <td>{{ contact.first_name }}</td>
     <td>{{ contact.last_name }}</td>
     <td>{{ contact.email }}</td>
-    <td><a href="{{ path('formation_3.show', {contact: contact.id}) }}">{{ 'Show'|t }}</a></td>
+    <td>
+      <a href="{{ path('formation_3.show', {contact: contact.id}) }}">{{ 'Show'|t }}</a>
+      {% if user.hasPermission('delete contact') %}
+      <a href="{{ path('formation_3.contact_delete_confirm', {contact: contact.id}) }}">{{ 'Delete'|t }}</a>
+      {% endif %}
+    </td>
   </tr>
   {% endfor %}
   </tbody>
